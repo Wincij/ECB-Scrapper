@@ -38,3 +38,18 @@ def getRate(link):
 
 
     return lastRate.title.get_text()
+
+
+def home(request):
+    context = {}
+    links = getLinks()
+    for link in links:
+        # 1.9558 BGN = 1 EUR 2019-03-12 ECB Reference rate <- this is simple output of getRate(), we need currency rate and currency name, so we split the output
+        splited = getRate(link).split()
+        key = splited[1]
+        context[key] = float(splited[0])
+        rate = Rate(currency = key, cost = context[key])
+        rate.save()
+    #After we created dictonairy of up-to-date currency rates we can parse it to our render function.
+
+    return render(request, 'home.html', {"context": context})
