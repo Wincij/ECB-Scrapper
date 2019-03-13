@@ -2,7 +2,13 @@
 REST API European Central Bank currencies scrapper. Build with Django 2.1.2, BeautifulSoup4 (as a scrapper) and Requests.
 
 
-All requirements are in requirements.txt file.
+All requirements are in requirements.txt file...
+
+To run application locally just use
+
+python manage.py runserver
+
+and go to localhost:8000 (as default)
 
 First we use Reuquests module to get every currency RSS from https://www.ecb.europa.eu/home/html/rss.en.html. Site is set as static parameter - can be changed in future.
 It will be useful to get real time data scrap from ECB site every time the page is loaded. If for example, some currencies will change in near future. 
