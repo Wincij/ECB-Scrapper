@@ -1,5 +1,5 @@
 from django.shortcuts import render
-
+from rates.models import Rate
 # Create your views here.
 from bs4 import BeautifulSoup
 import requests
