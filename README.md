@@ -8,38 +8,17 @@ First we use Reuquests module to get every currency RSS from https://www.ecb.eur
 It will be useful to get real time data scrap from ECB site every time the page is loaded. If for example, some currencies will change in near future. 
 We use BeautifulSoup4 to get all content of every RSS channel (every currency is indeed explicit):
 
-https://www.ecb.europa.eu/rss/fxref-usd.html
-https://www.ecb.europa.eu/rss/fxref-jpy.html
-https://www.ecb.europa.eu/rss/fxref-bgn.html
-https://www.ecb.europa.eu/rss/fxref-czk.html
-https://www.ecb.europa.eu/rss/fxref-dkk.html
-https://www.ecb.europa.eu/rss/fxref-eek.html
-https://www.ecb.europa.eu/rss/fxref-gbp.html
-https://www.ecb.europa.eu/rss/fxref-huf.html
-https://www.ecb.europa.eu/rss/fxref-pln.html
-https://www.ecb.europa.eu/rss/fxref-ron.html
-https://www.ecb.europa.eu/rss/fxref-sek.html
-https://www.ecb.europa.eu/rss/fxref-chf.html
-https://www.ecb.europa.eu/rss/fxref-isk.html
-https://www.ecb.europa.eu/rss/fxref-nok.html
-https://www.ecb.europa.eu/rss/fxref-hrk.html
-https://www.ecb.europa.eu/rss/fxref-rub.html
-https://www.ecb.europa.eu/rss/fxref-try.html
-https://www.ecb.europa.eu/rss/fxref-aud.html
-https://www.ecb.europa.eu/rss/fxref-brl.html
-https://www.ecb.europa.eu/rss/fxref-cad.html
-https://www.ecb.europa.eu/rss/fxref-cny.html
-https://www.ecb.europa.eu/rss/fxref-hkd.html
-https://www.ecb.europa.eu/rss/fxref-idr.html
-https://www.ecb.europa.eu/rss/fxref-inr.html
-https://www.ecb.europa.eu/rss/fxref-krw.html
-https://www.ecb.europa.eu/rss/fxref-mxn.html
-https://www.ecb.europa.eu/rss/fxref-myr.html
-https://www.ecb.europa.eu/rss/fxref-nzd.html
-https://www.ecb.europa.eu/rss/fxref-php.html
-https://www.ecb.europa.eu/rss/fxref-sgd.html
-https://www.ecb.europa.eu/rss/fxref-thb.html
-https://www.ecb.europa.eu/rss/fxref-zar.html
+- https://www.ecb.europa.eu/rss/fxref-usd.html
+
+- https://www.ecb.europa.eu/rss/fxref-jpy.html
+
+- https://www.ecb.europa.eu/rss/fxref-bgn.html
+
+- https://www.ecb.europa.eu/rss/fxref-czk.html
+
+- https://www.ecb.europa.eu/rss/fxref-dkk.html
+
+and so on...
 
 
 For each link before the site is rendered getRate() function reads content from RSS and scrap it to get only currency rate info. It returns string like:
@@ -48,7 +27,7 @@ For each link before the site is rendered getRate() function reads content from 
 
 - 7.4602 DKK = 1 EUR 2019-03-12 ECB Reference rate
 
--15.6466 EEK = 1 EUR 2010-12-31 ECB Reference rate
+- 15.6466 EEK = 1 EUR 2010-12-31 ECB Reference rate
  so its still a bit too much text.
 
 
