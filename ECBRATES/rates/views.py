@@ -26,3 +26,15 @@ def getLinks():
 
     # We crated completed list of RSS
     return link_list
+
+
+def getRate(link):
+    """ This function reads content from RSS and scrap it to get currency rate info. It returns string like '0.86145 GBP = 1 EUR 2019-03-12 ECB Reference rate'  """
+    request = requests.get(link)
+    html = request.content.decode('utf-8')
+    soup = BeautifulSoup(html, 'html.parser')
+    #The most up-to-date rate at 0 index. So we will be intrested only in this one
+    lastRate = soup.find_all('item')[0]
+
+
+    return lastRate.title.get_text()
